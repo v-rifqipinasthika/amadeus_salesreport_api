@@ -1,6 +1,6 @@
 AGY NO - 15314062              QUERY REPORT 20JAN-05FEB            CURRENCY IDR
 OFFICE - JKTTV28AA             SELECTION:
-AGENT  - ALL                                                        11 FEB 2024
+AGENT  - ALL                                                        12 FEB 2024
 -------------------------------------------------------------------------------
 SEQ NO A/L DOC NUMBER TOTAL DOC    TAX    FEE   COMM FP PAX NAME AS RLOC   TRNC
 -------------------------------------------------------------------------------
