@@ -1,0 +1,30 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strResult&Sequence_3",
+        "soapBody&Sequence_1",
+        "endPoint&Sequence_1",
+        "resContent&Sequence_1",
+        "resStatus&Sequence_1",
+        "credNonce&Sequence_1",
+        "credCreated&Sequence_1",
+        "credPassword&Sequence_1",
+        "testPassword&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

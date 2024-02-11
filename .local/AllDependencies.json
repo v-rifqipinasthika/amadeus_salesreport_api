@@ -13669,6 +13669,7 @@
       "path": "nlog/4.5.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/monoandroid44/NLog.dll",
         "lib/monoandroid44/NLog.xml",
         "lib/net35/NLog.dll",
@@ -13820,6 +13821,7 @@
       "path": "runtime.any.system.diagnostics.tools/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13974,6 +13976,7 @@
       "path": "runtime.any.system.reflection.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -14203,6 +14206,7 @@
       "path": "runtime.any.system.threading.timer/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -14625,6 +14629,7 @@
       "path": "runtime.win.system.console/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard/_._",
@@ -14697,6 +14702,7 @@
       "path": "runtime.win.system.net.sockets/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard/_._",
@@ -14731,6 +14737,7 @@
       "path": "runtime.win7-x64.runtime.native.system.io.compression/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.win7-x64.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
@@ -21895,19 +21902,19 @@
       "UiPath.System.Activities >= 23.12.0-preview <= 23.12.0-preview",
       "UiPath.Testing.Activities >= 23.12.0-preview <= 23.12.0-preview",
       "UiPath.UIAutomation.Activities >= 23.10.8 <= 23.10.8",
-      "UiPath.WebAPI.Activities >= 1.13.3 <= 1.13.3"
+      "UiPath.WebAPI.Activities >= 1.13.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rifqi Pinasthika\\.nuget\\packages\\": {}
+    "C:\\Users\\istia\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Amadeus API",
       "projectName": "Amadeus API",
-      "projectPath": "C:\\Users\\Rifqi Pinasthika\\Documents\\UiPath\\Amadeus API\\.local",
-      "packagesPath": "C:\\Users\\Rifqi Pinasthika\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rifqi Pinasthika\\Documents\\UiPath\\Amadeus API\\.local"
+      "projectPath": "C:\\Traveloka_DataAutomation\\amadeus_salesreport_api\\.local",
+      "packagesPath": "C:\\Users\\istia\\.nuget\\packages\\",
+      "outputPath": "C:\\Traveloka_DataAutomation\\amadeus_salesreport_api\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -21940,10 +21947,10 @@
           "UiPath.WebAPI.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.13.3, 1.13.3]"
+            "version": "[1.13.3, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Rifqi Pinasthika\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\istia\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
