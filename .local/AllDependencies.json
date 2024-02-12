@@ -21906,15 +21906,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\istia\\.nuget\\packages\\": {}
+    "C:\\Users\\Rifqi Pinasthika\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Amadeus API",
       "projectName": "Amadeus API",
-      "projectPath": "C:\\Traveloka_DataAutomation\\amadeus_salesreport_api\\.local",
-      "packagesPath": "C:\\Users\\istia\\.nuget\\packages\\",
-      "outputPath": "C:\\Traveloka_DataAutomation\\amadeus_salesreport_api\\.local"
+      "projectPath": "C:\\Kalyana\\amadeus_salesreport_api\\.local",
+      "packagesPath": "C:\\Users\\Rifqi Pinasthika\\.nuget\\packages\\",
+      "outputPath": "C:\\Kalyana\\amadeus_salesreport_api\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -21950,7 +21950,7 @@
             "version": "[1.13.3, 1.13.3]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\istia\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Rifqi Pinasthika\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {

@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="594,1878.6666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1410.4,2438.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -110,31 +118,48 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="472,1814" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="660,2373.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="soapBody" />
-      <Variable x:TypeArguments="x:String" Default="https://nodeD1.test.webservices.amadeus.com/1ASIWTVKTKA" Name="endPoint" />
+      <Variable x:TypeArguments="x:String" Name="endPoint">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">https://nodeD1.test.webservices.amadeus.com/1ASIWTVKTKA/1ASIWTVKTKA</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="resContent" />
       <Variable x:TypeArguments="x:Int32" Name="resStatus" />
       <Variable x:TypeArguments="x:String" Name="credNonce" />
       <Variable x:TypeArguments="x:String" Name="credCreated" />
       <Variable x:TypeArguments="x:String" Name="credPassword" />
-      <Variable x:TypeArguments="x:String" Name="testPassword" />
       <Variable x:TypeArguments="x:String" Name="messageId" />
+      <Variable x:TypeArguments="x:String" Name="strResult" />
+      <Variable x:TypeArguments="x:String" Name="cityCode">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">JKTTV28AA</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="userName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">WSTKATVK</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="reportType">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">TJQ/SOF</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Generate_MessageId.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="410,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Generate_MessageId.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Generate_MessageId.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="597.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Generate_MessageId.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_messageId">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="messageId" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_messageId">[messageId]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Generate_PasswordDigest.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="410,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Generate_PasswordDigest.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Generate_PasswordDigest.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="597.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Generate_PasswordDigest.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_credNonce">
           <VisualBasicReference x:TypeArguments="x:String" ExpressionText="credNonce" />
@@ -147,7 +172,7 @@
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Data&#xD;&#xA;string varMessageId = in_messageId;&#xD;&#xA;string varAction = &quot;http://webservices.amadeus.com/HSFREQ_07_3_1A&quot;;&#xD;&#xA;string varTo = &quot;https://nodeD1.test.webservices.amadeus.com/1ASIWTVKTKA/1ASIWTVKTKA&quot;;&#xD;&#xA;string varUserName = &quot;WSTKATVK&quot;;&#xD;&#xA;string varNonce = in_nonce;&#xD;&#xA;string varPass = in_password;&#xD;&#xA;string varCreated = in_created;&#xD;&#xA;string varCityCode = &quot;JKTTV28AA&quot;;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the XmlDocument&#xD;&#xA;XmlDocument xmlDoc = new XmlDocument();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the root element&#xD;&#xA;XmlElement envelopeElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Envelope&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:soapenv&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:sec&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:typ&quot;, &quot;http://xml.amadeus.com/2010/06/Types_v1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:iat&quot;, &quot;http://www.iata.org/IATA/2007/00/IATA2010.1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:app&quot;, &quot;http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:link&quot;, &quot;http://wsdl.amadeus.com/2010/06/ws/Link_v1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:ses&quot;, &quot;http://xml.amadeus.com/2010/06/Session_v3&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:hsf&quot;, &quot;http://xml.amadeus.com/HSFREQ_07_3_1A&quot;);&#xD;&#xA;xmlDoc.AppendChild(envelopeElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the Header element&#xD;&#xA;XmlElement headerElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Header&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.AppendChild(headerElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add namespaces for Header&#xD;&#xA;headerElement.SetAttribute(&quot;xmlns:add&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add MessageID, Action, and To elements&#xD;&#xA;XmlElement messageIdElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;MessageID&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;messageIdElement.InnerText = varMessageId;&#xD;&#xA;headerElement.AppendChild(messageIdElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement actionElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;Action&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;actionElement.InnerText = varAction;&#xD;&#xA;headerElement.AppendChild(actionElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement toElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;To&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;toElement.InnerText = varTo;&#xD;&#xA;headerElement.AppendChild(toElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Security element&#xD;&#xA;XmlElement securityElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Security&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;headerElement.AppendChild(securityElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;securityElement.SetAttribute(&quot;xmlns:oas&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;securityElement.SetAttribute(&quot;xmlns:oas1&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Username Token Element&#xD;&#xA;XmlElement usernameTokenElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;UsernameToken&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;securityElement.AppendChild(usernameTokenElement);&#xD;&#xA;&#xD;&#xA;XmlAttribute idAttribute = xmlDoc.CreateAttribute(&quot;oas1&quot;, &quot;Id&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xD;&#xA;idAttribute.Value = &quot;UsernameToken-1&quot;;&#xD;&#xA;usernameTokenElement.Attributes.Append(idAttribute);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement usernameElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Username&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;usernameElement.InnerText = varUserName;&#xD;&#xA;usernameTokenElement.AppendChild(usernameElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Nonce element&#xD;&#xA;XmlElement nonceElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Nonce&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;nonceElement.SetAttribute(&quot;EncodingType&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;);&#xD;&#xA;nonceElement.InnerText = varNonce;&#xD;&#xA;usernameTokenElement.AppendChild(nonceElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Password element&#xD;&#xA;XmlElement passwordElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Password&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;passwordElement.SetAttribute(&quot;Type&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest&quot;);&#xD;&#xA;passwordElement.InnerText = varPass;&#xD;&#xA;usernameTokenElement.AppendChild(passwordElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Created Element&#xD;&#xA;XmlElement createdElement = xmlDoc.CreateElement(&quot;oas1&quot;, &quot;Created&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xD;&#xA;createdElement.InnerText = varCreated;&#xD;&#xA;usernameTokenElement.AppendChild(createdElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add AMA_SecurityHostedUser element&#xD;&#xA;XmlElement securityHostedUserElement = xmlDoc.CreateElement(&quot;&quot;, &quot;AMA_SecurityHostedUser&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xD;&#xA;headerElement.AppendChild(securityHostedUserElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement userIDElement = xmlDoc.CreateElement(&quot;&quot;, &quot;UserID&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xD;&#xA;userIDElement.SetAttribute(&quot;AgentDutyCode&quot;, &quot;SU&quot;);&#xD;&#xA;userIDElement.SetAttribute(&quot;RequestorType&quot;, &quot;U&quot;);&#xD;&#xA;userIDElement.SetAttribute(&quot;PseudoCityCode&quot;, varCityCode);&#xD;&#xA;userIDElement.SetAttribute(&quot;POS_Type&quot;, &quot;1&quot;);&#xD;&#xA;securityHostedUserElement.AppendChild(userIDElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add awsse:Session element&#xD;&#xA;XmlElement sessionElement = xmlDoc.CreateElement(&quot;awsse&quot;, &quot;Session&quot;, &quot;http://xml.amadeus.com/2010/06/Session_v3&quot;);&#xD;&#xA;headerElement.AppendChild(sessionElement);&#xD;&#xA;sessionElement.SetAttribute(&quot;TransactionStatusCode&quot;, &quot;Start&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the Body element&#xD;&#xA;XmlElement bodyElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Body&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.AppendChild(bodyElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the Command_Cryptic element&#xD;&#xA;XmlElement commandCrypticElement = xmlDoc.CreateElement(&quot;&quot;, &quot;Command_Cryptic&quot;, &quot;&quot;);&#xD;&#xA;bodyElement.AppendChild(commandCrypticElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add messageAction element&#xD;&#xA;XmlElement messageActionElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageAction&quot;, &quot;&quot;);&#xD;&#xA;commandCrypticElement.AppendChild(messageActionElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add messageFunctionDetails element&#xD;&#xA;XmlElement messageFunctionDetailsElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageFunctionDetails&quot;, &quot;&quot;);&#xD;&#xA;messageActionElement.AppendChild(messageFunctionDetailsElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add messageFunction element&#xD;&#xA;XmlElement messageFunctionElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageFunction&quot;, &quot;&quot;);&#xD;&#xA;messageFunctionElement.InnerText = &quot;M&quot;;&#xD;&#xA;messageFunctionDetailsElement.AppendChild(messageFunctionElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add longTextString element&#xD;&#xA;XmlElement longTextStringElement = xmlDoc.CreateElement(&quot;&quot;, &quot;longTextString&quot;, &quot;&quot;);&#xD;&#xA;commandCrypticElement.AppendChild(longTextStringElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add textStringDetails element&#xD;&#xA;XmlElement textStringDetailsElement = xmlDoc.CreateElement(&quot;&quot;, &quot;textStringDetails&quot;, &quot;&quot;);&#xD;&#xA;textStringDetailsElement.InnerText = &quot;TJQ/SOF/D-20JAN5FEB&quot;;&#xD;&#xA;longTextStringElement.AppendChild(textStringDetailsElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Return the XML string&#xD;&#xA;string xmlResult = xmlDoc.InnerXml;&#xD;&#xA;out_soapBody = xmlResult;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Print the XML result to the console&#xD;&#xA;Console.WriteLine(&quot;XML Result:&quot;);&#xD;&#xA;Console.WriteLine(xmlResult);" DisplayName="Invoke Code Generate SOAP Body" sap:VirtualizedContainerService.HintSize="410,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Data&#xD;&#xA;string varMessageId = in_messageId;&#xD;&#xA;string varAction = &quot;http://webservices.amadeus.com/HSFREQ_07_3_1A&quot;;&#xD;&#xA;string varEndPoint = in_endPoint;&#xD;&#xA;string varUserName = in_userName;&#xD;&#xA;string varNonce = in_nonce;&#xD;&#xA;string varPass = in_password;&#xD;&#xA;string varCreated = in_created;&#xD;&#xA;string varCityCode = in_cityCode;&#xD;&#xA;string reportFilter = &quot;TJQ/SOF/D-20JAN5FEB&quot;;&#xD;&#xA;//string reportFilter = string.Format(&quot;{0}/D-{1}&quot;, in_reportType, in_period.ToString(&quot;ddMMMddMMM&quot;));&#xD;&#xA;Console.WriteLine(reportFilter);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the XmlDocument&#xD;&#xA;XmlDocument xmlDoc = new XmlDocument();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the root element&#xD;&#xA;XmlElement envelopeElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Envelope&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:soapenv&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:sec&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:typ&quot;, &quot;http://xml.amadeus.com/2010/06/Types_v1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:iat&quot;, &quot;http://www.iata.org/IATA/2007/00/IATA2010.1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:app&quot;, &quot;http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:link&quot;, &quot;http://wsdl.amadeus.com/2010/06/ws/Link_v1&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:ses&quot;, &quot;http://xml.amadeus.com/2010/06/Session_v3&quot;);&#xD;&#xA;envelopeElement.SetAttribute(&quot;xmlns:hsf&quot;, &quot;http://xml.amadeus.com/HSFREQ_07_3_1A&quot;);&#xD;&#xA;xmlDoc.AppendChild(envelopeElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the Header element&#xD;&#xA;XmlElement headerElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Header&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.AppendChild(headerElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add namespaces for Header&#xD;&#xA;headerElement.SetAttribute(&quot;xmlns:add&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add MessageID, Action, and To elements&#xD;&#xA;XmlElement messageIdElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;MessageID&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;messageIdElement.InnerText = varMessageId;&#xD;&#xA;headerElement.AppendChild(messageIdElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement actionElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;Action&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;actionElement.InnerText = varAction;&#xD;&#xA;headerElement.AppendChild(actionElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement toElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;To&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xD;&#xA;toElement.InnerText = varEndPoint;&#xD;&#xA;headerElement.AppendChild(toElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Security element&#xD;&#xA;XmlElement securityElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Security&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;headerElement.AppendChild(securityElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;securityElement.SetAttribute(&quot;xmlns:oas&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;securityElement.SetAttribute(&quot;xmlns:oas1&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Username Token Element&#xD;&#xA;XmlElement usernameTokenElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;UsernameToken&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;securityElement.AppendChild(usernameTokenElement);&#xD;&#xA;&#xD;&#xA;XmlAttribute idAttribute = xmlDoc.CreateAttribute(&quot;oas1&quot;, &quot;Id&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xD;&#xA;idAttribute.Value = &quot;UsernameToken-1&quot;;&#xD;&#xA;usernameTokenElement.Attributes.Append(idAttribute);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement usernameElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Username&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;usernameElement.InnerText = varUserName;&#xD;&#xA;usernameTokenElement.AppendChild(usernameElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Nonce element&#xD;&#xA;XmlElement nonceElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Nonce&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;nonceElement.SetAttribute(&quot;EncodingType&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;);&#xD;&#xA;nonceElement.InnerText = varNonce;&#xD;&#xA;usernameTokenElement.AppendChild(nonceElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Password element&#xD;&#xA;XmlElement passwordElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Password&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xD;&#xA;passwordElement.SetAttribute(&quot;Type&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest&quot;);&#xD;&#xA;passwordElement.InnerText = varPass;&#xD;&#xA;usernameTokenElement.AppendChild(passwordElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add Created Element&#xD;&#xA;XmlElement createdElement = xmlDoc.CreateElement(&quot;oas1&quot;, &quot;Created&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xD;&#xA;createdElement.InnerText = varCreated;&#xD;&#xA;usernameTokenElement.AppendChild(createdElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add AMA_SecurityHostedUser element&#xD;&#xA;XmlElement securityHostedUserElement = xmlDoc.CreateElement(&quot;&quot;, &quot;AMA_SecurityHostedUser&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xD;&#xA;headerElement.AppendChild(securityHostedUserElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;XmlElement userIDElement = xmlDoc.CreateElement(&quot;&quot;, &quot;UserID&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xD;&#xA;userIDElement.SetAttribute(&quot;AgentDutyCode&quot;, &quot;SU&quot;);&#xD;&#xA;userIDElement.SetAttribute(&quot;RequestorType&quot;, &quot;U&quot;);&#xD;&#xA;userIDElement.SetAttribute(&quot;PseudoCityCode&quot;, varCityCode);&#xD;&#xA;userIDElement.SetAttribute(&quot;POS_Type&quot;, &quot;1&quot;);&#xD;&#xA;securityHostedUserElement.AppendChild(userIDElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add awsse:Session element&#xD;&#xA;XmlElement sessionElement = xmlDoc.CreateElement(&quot;awsse&quot;, &quot;Session&quot;, &quot;http://xml.amadeus.com/2010/06/Session_v3&quot;);&#xD;&#xA;headerElement.AppendChild(sessionElement);&#xD;&#xA;sessionElement.SetAttribute(&quot;TransactionStatusCode&quot;, &quot;Start&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the Body element&#xD;&#xA;XmlElement bodyElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Body&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xD;&#xA;envelopeElement.AppendChild(bodyElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Create the Command_Cryptic element&#xD;&#xA;XmlElement commandCrypticElement = xmlDoc.CreateElement(&quot;&quot;, &quot;Command_Cryptic&quot;, &quot;&quot;);&#xD;&#xA;bodyElement.AppendChild(commandCrypticElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add messageAction element&#xD;&#xA;XmlElement messageActionElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageAction&quot;, &quot;&quot;);&#xD;&#xA;commandCrypticElement.AppendChild(messageActionElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add messageFunctionDetails element&#xD;&#xA;XmlElement messageFunctionDetailsElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageFunctionDetails&quot;, &quot;&quot;);&#xD;&#xA;messageActionElement.AppendChild(messageFunctionDetailsElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add messageFunction element&#xD;&#xA;XmlElement messageFunctionElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageFunction&quot;, &quot;&quot;);&#xD;&#xA;messageFunctionElement.InnerText = &quot;M&quot;;&#xD;&#xA;messageFunctionDetailsElement.AppendChild(messageFunctionElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add longTextString element&#xD;&#xA;XmlElement longTextStringElement = xmlDoc.CreateElement(&quot;&quot;, &quot;longTextString&quot;, &quot;&quot;);&#xD;&#xA;commandCrypticElement.AppendChild(longTextStringElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Add textStringDetails element&#xD;&#xA;XmlElement textStringDetailsElement = xmlDoc.CreateElement(&quot;&quot;, &quot;textStringDetails&quot;, &quot;&quot;);&#xD;&#xA;textStringDetailsElement.InnerText = reportFilter;&#xD;&#xA;longTextStringElement.AppendChild(textStringDetailsElement);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Return the XML string&#xD;&#xA;string xmlResult = xmlDoc.InnerXml;&#xD;&#xA;out_soapBody = xmlResult;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Print the XML result to the console&#xD;&#xA;Console.WriteLine(&quot;XML Result:&quot;);&#xD;&#xA;Console.WriteLine(xmlResult);" DisplayName="Invoke Code Generate SOAP Body" sap:VirtualizedContainerService.HintSize="597.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_soapBody">
           <VisualBasicReference x:TypeArguments="x:String" ExpressionText="soapBody" />
@@ -164,9 +189,24 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_messageId">
           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="messageId" />
         </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_reportType">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="reportType" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
+          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_cityCode">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="cityCode" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_endPoint">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="endPoint" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_userName">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="userName" />
+        </InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="XML" AuthenticationType="None" Body="[soapBody]" BodyFormat="application/xml" DisplayName="HTTP Request Amadeus Sales Report TJQ" EnableSSLVerification="True" EndPoint="[endPoint]" sap:VirtualizedContainerService.HintSize="410,72" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[resContent]" StatusCode="[resStatus]" TimeoutMS="6000">
+    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="XML" AuthenticationType="None" Body="[soapBody]" BodyFormat="application/xml" DisplayName="HTTP Request Amadeus Sales Report TJQ" EnableSSLVerification="True" EndPoint="[endPoint]" sap:VirtualizedContainerService.HintSize="597.6,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[resContent]" StatusCode="[resStatus]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -184,43 +224,73 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <If Condition="[resStatus = 200]" DisplayName="If Report Retieved Successfully" sap:VirtualizedContainerService.HintSize="410,1075.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,659.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="x:String" Name="strResult" />
-          </Sequence.Variables>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Success to retieve reprort&quot;]" />
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Assuming soapResponse contains your SOAP API response XML as a string&#xA;string soapResponse = in_response;&#xA;&#xA;// Load the XML string into an XDocument&#xA;XDocument xdoc = XDocument.Parse(soapResponse);&#xA;&#xA;// Find the &quot;textStringDetails&quot; element within the &quot;Command_CrypticReply&quot;&#xA;var textStringDetailsElement = xdoc.Descendants(&quot;{http://xml.amadeus.com/HSFRES_07_3_1A}Command_CrypticReply&quot;)&#xA;                                   .Elements(&quot;{http://xml.amadeus.com/HSFRES_07_3_1A}longTextString&quot;)&#xA;                                   .Elements(&quot;{http://xml.amadeus.com/HSFRES_07_3_1A}textStringDetails&quot;)&#xA;                                   .FirstOrDefault();&#xA;&#xA;// Check if the element is found&#xA;if (textStringDetailsElement != null)&#xA;{&#xA;    // Get the value within the &quot;textStringDetails&quot; element&#xA;    string textStringDetailsValue = textStringDetailsElement.Value;&#xA;&#xA;    // Now you can use the extracted value as needed&#xA;    // For example, print it to the Output panel&#xA;    Console.WriteLine(&quot;textStringDetailsValue: &quot; + textStringDetailsValue);&#xA;&#x9;out_finalResult = textStringDetailsValue;&#xA;}&#xA;else&#xA;{&#xA;    // Handle the case where the element is not found&#xA;    Console.WriteLine(&quot;textStringDetails element not found in SOAP response&quot;);&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_4" Language="CSharp">
-            <ui:InvokeCode.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_response">[resContent]</InArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_finalResult">[strResult]</OutArgument>
-            </ui:InvokeCode.Arguments>
-          </ui:InvokeCode>
-          <ui:WriteTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Table fix column&#xD;&#xA;11, 11, 10, 7, 7, 7, 3, 9, 3, 7, 6" DisplayName="Write Text File" FileName="result table.txt" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[strResult]">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:WriteTextFile>
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,232" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Failed to retieve reprort&quot;]" />
-        </Sequence>
-      </If.Else>
-    </If>
+    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="597.6,1638.4" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+      <ui:IfElseIf.ConditionBlocks>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="If" Condition="[resStatus = 500]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body error response" sap:VirtualizedContainerService.HintSize="449.6,202.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw Failed API Call" Exception="[New Exception(String.Format(&quot;{1}: {0}{2}{0}{3}: {0}{4}&quot;, Environment.NewLine, &quot;Status&quot;, resStatus, &quot;Content&quot;, resContent))]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[resContent.ToLower.Contains(&quot;no data found&quot;)]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,202.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw Data Not Found" Exception="[New BusinessRuleException(String.Format(&quot;Data not found for period : {0}&quot;, &quot;abc&quot;))]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[resStatus = 200]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,786.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Success to retieve report &quot; + cityCode]" />
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Assuming soapResponse contains your SOAP API response XML as a string&#xA;string soapResponse = in_response;&#xA;&#xA;// Load the XML string into an XDocument&#xA;XDocument xdoc = XDocument.Parse(soapResponse);&#xA;&#xA;// Find the &quot;textStringDetails&quot; element within the &quot;Command_CrypticReply&quot;&#xA;var textStringDetailsElement = xdoc.Descendants(&quot;{http://xml.amadeus.com/HSFRES_07_3_1A}Command_CrypticReply&quot;)&#xA;                                   .Elements(&quot;{http://xml.amadeus.com/HSFRES_07_3_1A}longTextString&quot;)&#xA;                                   .Elements(&quot;{http://xml.amadeus.com/HSFRES_07_3_1A}textStringDetails&quot;)&#xA;                                   .FirstOrDefault();&#xA;&#xA;// Check if the element is found&#xA;if (textStringDetailsElement != null)&#xA;{&#xA;    // Get the value within the &quot;textStringDetails&quot; element&#xA;    string textStringDetailsValue = textStringDetailsElement.Value;&#xA;&#xA;    // Now you can use the extracted value as needed&#xA;    // For example, print it to the Output panel&#xA;    Console.WriteLine(&quot;textStringDetailsValue: &quot; + textStringDetailsValue);&#xA;&#x9;out_finalResult = textStringDetailsValue;&#xA;}&#xA;else&#xA;{&#xA;    // Handle the case where the element is not found&#xA;    Console.WriteLine(&quot;textStringDetails element not found in SOAP response&quot;);&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="484.8,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_5" Language="CSharp">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_response">[resContent]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_finalResult">[strResult]</OutArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,287.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,208.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:WriteTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Table fix column&#xA;11, 11, 10, 7, 7, 7, 3, 9, 3, 7, 6" DisplayName="Write Text File" FileName="result table.txt" sap:VirtualizedContainerService.HintSize="387.2,96.8" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[strResult]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:WriteTextFile>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                </ui:CommentOut>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIf.ConditionBlocks>
+    </ui:IfElseIf>
   </Sequence>
 </Activity>
