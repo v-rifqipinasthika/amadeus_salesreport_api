@@ -12,17 +12,85 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strResult&Sequence_3",
+        "wsap&Sequence_1",
+        "messageIdLen&Sequence_1",
+        "rawReport&Sequence_1",
+        "password&Sequence_1",
+        "action&Sequence_1",
+        "reportType&Sequence_1",
+        "userName&Sequence_1",
+        "cityCode&Sequence_1",
+        "messageId&Sequence_1",
         "soapBody&Sequence_1",
         "endPoint&Sequence_1",
         "resContent&Sequence_1",
         "resStatus&Sequence_1",
         "credNonce&Sequence_1",
         "credCreated&Sequence_1",
-        "credPassword&Sequence_1",
-        "testPassword&Sequence_1"
+        "credPassword&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Generate_MessageId.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "characters&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_messageIdLen",
+        "out_messageId"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Amadeus_TJQ_APIRequest.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "soapBody&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_action",
+        "in_messageId",
+        "out_resStatus",
+        "out_resContent",
+        "in_endPoint",
+        "in_cityCode",
+        "reportType",
+        "in_credPassword",
+        "in_credCreated",
+        "in_credNonce",
+        "in_userName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Generate_PasswordDigest.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_password",
+        "out_credNonce",
+        "out_credCreated",
+        "out_credPassword"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Amadeus_TJQ_GetReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "rawReport&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_pathResult",
+        "in_resContent"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

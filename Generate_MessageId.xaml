@@ -1,11 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Generate_MessageId" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Generate_MessageId" this:Generate_MessageId.in_messageIdLen="50" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_messageId" Type="OutArgument(x:String)" />
+    <x:Property Name="in_messageIdLen" Type="InArgument(x:Int32)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>594,538</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410.4,610.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Generate_MessageId_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -80,36 +81,22 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Generate_MessageId" sap:VirtualizedContainerService.HintSize="450,460.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Generate API request n character alphanumerical message id" DisplayName="Generate_MessageId" sap:VirtualizedContainerService.HintSize="449.6,490.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="characters">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="length">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="50" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-" Name="characters" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Generate_MessageId" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Generate_MessageId&quot;]" />
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Random random = new Random();&#xD;&#xA;string result = new string(Enumerable.Repeat(characters, length).Select(s =&gt; s[random.Next(s.Length)]).ToArray());&#xD;&#xA;out_messageId = result;&#xD;&#xA;Console.WriteLine(out_messageId);" DisplayName="Invoke Code Generate Message Id" sap:VirtualizedContainerService.HintSize="388,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:LogMessage DisplayName="Log Message Generate_MessageId" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Generate_MessageId&quot;]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Random random = new Random();&#xA;string result = new string(Enumerable.Repeat(characters, length).Select(s =&gt; s[random.Next(s.Length)]).ToArray());&#xA;out_messageId = result;&#xA;Console.WriteLine(out_messageId);" DisplayName="Invoke Code Generate Message Id" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="characters">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="characters" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="length">
-          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="length" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_messageId">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_messageId" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="characters">[characters]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="length">[in_messageIdLen]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_messageId">[out_messageId]</OutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
   </Sequence>

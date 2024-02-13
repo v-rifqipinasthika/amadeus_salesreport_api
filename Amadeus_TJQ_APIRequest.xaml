@@ -1,0 +1,157 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Amadeus_TJQ_APIRequest" this:Amadeus_TJQ_APIRequest.in_userName="WSTKATVK" this:Amadeus_TJQ_APIRequest.reportType="TJQ/SOF" this:Amadeus_TJQ_APIRequest.in_cityCode="JKTTV28AA" this:Amadeus_TJQ_APIRequest.in_endPoint="https://nodeD1.test.webservices.amadeus.com/1ASIWTVKTKA" this:Amadeus_TJQ_APIRequest.in_action="http://webservices.amadeus.com/HSFREQ_07_3_1A" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_userName" Type="InArgument(x:String)" />
+    <x:Property Name="in_credNonce" Type="InArgument(x:String)" />
+    <x:Property Name="in_credCreated" Type="InArgument(x:String)" />
+    <x:Property Name="in_credPassword" Type="InArgument(x:String)" />
+    <x:Property Name="reportType" Type="InArgument(x:String)" />
+    <x:Property Name="in_cityCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_endPoint" Type="InArgument(x:String)" />
+    <x:Property Name="out_resContent" Type="OutArgument(x:String)" />
+    <x:Property Name="out_resStatus" Type="OutArgument(x:Int32)" />
+    <x:Property Name="in_messageId" Type="InArgument(x:String)" />
+    <x:Property Name="in_action" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Amadeus_TJQ_APIRequest.in_credNonce>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Amadeus_TJQ_APIRequest.in_credNonce>
+  <this:Amadeus_TJQ_APIRequest.in_credCreated>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Amadeus_TJQ_APIRequest.in_credCreated>
+  <this:Amadeus_TJQ_APIRequest.in_credPassword>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Amadeus_TJQ_APIRequest.in_credPassword>
+  <this:Amadeus_TJQ_APIRequest.in_messageId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Amadeus_TJQ_APIRequest.in_messageId>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1410.4,666.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Amadeus_TJQ_APIRequest_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="POST SOAP Request to get amadeus sales report from a specific city code" DisplayName="Amadeus_TJQ_APIRequest" sap:VirtualizedContainerService.HintSize="449.6,601.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="soapBody" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Amadeus_TJQ_APIRequest&quot;]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Data&#xA;string varMessageId = in_messageId;&#xA;string varAction = in_action;&#xA;string varEndPoint = in_endPoint;&#xA;string varUserName = in_userName;&#xA;string varNonce = in_nonce;&#xA;string varPass = in_password;&#xA;string varCreated = in_created;&#xA;string varCityCode = in_cityCode;&#xA;string reportFilter = &quot;TJQ/SOF/D-20JAN5FEB&quot;;&#xA;//string reportFilter = string.Format(&quot;{0}/D-{1}&quot;, in_reportType, in_period.ToString(&quot;ddMMMddMMM&quot;));&#xA;Console.WriteLine(reportFilter);&#xA;&#xA;&#xA;// Create the XmlDocument&#xA;XmlDocument xmlDoc = new XmlDocument();&#xA;&#xA;&#xA;&#xA;// Create the root element&#xA;XmlElement envelopeElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Envelope&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:soapenv&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:sec&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:typ&quot;, &quot;http://xml.amadeus.com/2010/06/Types_v1&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:iat&quot;, &quot;http://www.iata.org/IATA/2007/00/IATA2010.1&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:app&quot;, &quot;http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:link&quot;, &quot;http://wsdl.amadeus.com/2010/06/ws/Link_v1&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:ses&quot;, &quot;http://xml.amadeus.com/2010/06/Session_v3&quot;);&#xA;envelopeElement.SetAttribute(&quot;xmlns:hsf&quot;, &quot;http://xml.amadeus.com/HSFREQ_07_3_1A&quot;);&#xA;xmlDoc.AppendChild(envelopeElement);&#xA;&#xA;&#xA;&#xA;// Create the Header element&#xA;XmlElement headerElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Header&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xA;envelopeElement.AppendChild(headerElement);&#xA;&#xA;&#xA;&#xA;// Add namespaces for Header&#xA;headerElement.SetAttribute(&quot;xmlns:add&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xA;&#xA;&#xA;&#xA;// Add MessageID, Action, and To elements&#xA;XmlElement messageIdElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;MessageID&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xA;messageIdElement.InnerText = varMessageId;&#xA;headerElement.AppendChild(messageIdElement);&#xA;&#xA;&#xA;&#xA;XmlElement actionElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;Action&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xA;actionElement.InnerText = varAction;&#xA;headerElement.AppendChild(actionElement);&#xA;&#xA;&#xA;&#xA;XmlElement toElement = xmlDoc.CreateElement(&quot;add&quot;, &quot;To&quot;, &quot;http://www.w3.org/2005/08/addressing&quot;);&#xA;toElement.InnerText = varEndPoint;&#xA;headerElement.AppendChild(toElement);&#xA;&#xA;&#xA;&#xA;// Add Security element&#xA;XmlElement securityElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Security&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xA;headerElement.AppendChild(securityElement);&#xA;&#xA;&#xA;&#xA;securityElement.SetAttribute(&quot;xmlns:oas&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xA;securityElement.SetAttribute(&quot;xmlns:oas1&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xA;&#xA;&#xA;//Username Token Element&#xA;XmlElement usernameTokenElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;UsernameToken&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xA;securityElement.AppendChild(usernameTokenElement);&#xA;&#xA;XmlAttribute idAttribute = xmlDoc.CreateAttribute(&quot;oas1&quot;, &quot;Id&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xA;idAttribute.Value = &quot;UsernameToken-1&quot;;&#xA;usernameTokenElement.Attributes.Append(idAttribute);&#xA;&#xA;&#xA;&#xA;XmlElement usernameElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Username&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xA;usernameElement.InnerText = varUserName;&#xA;usernameTokenElement.AppendChild(usernameElement);&#xA;&#xA;&#xA;&#xA;// Add Nonce element&#xA;XmlElement nonceElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Nonce&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xA;nonceElement.SetAttribute(&quot;EncodingType&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;);&#xA;nonceElement.InnerText = varNonce;&#xA;usernameTokenElement.AppendChild(nonceElement);&#xA;&#xA;&#xA;// Add Password element&#xA;XmlElement passwordElement = xmlDoc.CreateElement(&quot;oas&quot;, &quot;Password&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;);&#xA;passwordElement.SetAttribute(&quot;Type&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest&quot;);&#xA;passwordElement.InnerText = varPass;&#xA;usernameTokenElement.AppendChild(passwordElement);&#xA;&#xA;&#xA;// Add Created Element&#xA;XmlElement createdElement = xmlDoc.CreateElement(&quot;oas1&quot;, &quot;Created&quot;, &quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;);&#xA;createdElement.InnerText = varCreated;&#xA;usernameTokenElement.AppendChild(createdElement);&#xA;&#xA;&#xA;&#xA;// Add AMA_SecurityHostedUser element&#xA;XmlElement securityHostedUserElement = xmlDoc.CreateElement(&quot;&quot;, &quot;AMA_SecurityHostedUser&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xA;headerElement.AppendChild(securityHostedUserElement);&#xA;&#xA;&#xA;&#xA;XmlElement userIDElement = xmlDoc.CreateElement(&quot;&quot;, &quot;UserID&quot;, &quot;http://xml.amadeus.com/2010/06/Security_v1&quot;);&#xA;userIDElement.SetAttribute(&quot;AgentDutyCode&quot;, &quot;SU&quot;);&#xA;userIDElement.SetAttribute(&quot;RequestorType&quot;, &quot;U&quot;);&#xA;userIDElement.SetAttribute(&quot;PseudoCityCode&quot;, varCityCode);&#xA;userIDElement.SetAttribute(&quot;POS_Type&quot;, &quot;1&quot;);&#xA;securityHostedUserElement.AppendChild(userIDElement);&#xA;&#xA;&#xA;&#xA;// Add awsse:Session element&#xA;XmlElement sessionElement = xmlDoc.CreateElement(&quot;awsse&quot;, &quot;Session&quot;, &quot;http://xml.amadeus.com/2010/06/Session_v3&quot;);&#xA;headerElement.AppendChild(sessionElement);&#xA;sessionElement.SetAttribute(&quot;TransactionStatusCode&quot;, &quot;Start&quot;);&#xA;&#xA;&#xA;&#xA;// Create the Body element&#xA;XmlElement bodyElement = xmlDoc.CreateElement(&quot;soapenv&quot;, &quot;Body&quot;, &quot;http://schemas.xmlsoap.org/soap/envelope/&quot;);&#xA;envelopeElement.AppendChild(bodyElement);&#xA;&#xA;&#xA;&#xA;// Create the Command_Cryptic element&#xA;XmlElement commandCrypticElement = xmlDoc.CreateElement(&quot;&quot;, &quot;Command_Cryptic&quot;, &quot;&quot;);&#xA;bodyElement.AppendChild(commandCrypticElement);&#xA;&#xA;&#xA;&#xA;// Add messageAction element&#xA;XmlElement messageActionElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageAction&quot;, &quot;&quot;);&#xA;commandCrypticElement.AppendChild(messageActionElement);&#xA;&#xA;&#xA;&#xA;// Add messageFunctionDetails element&#xA;XmlElement messageFunctionDetailsElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageFunctionDetails&quot;, &quot;&quot;);&#xA;messageActionElement.AppendChild(messageFunctionDetailsElement);&#xA;&#xA;&#xA;&#xA;// Add messageFunction element&#xA;XmlElement messageFunctionElement = xmlDoc.CreateElement(&quot;&quot;, &quot;messageFunction&quot;, &quot;&quot;);&#xA;messageFunctionElement.InnerText = &quot;M&quot;;&#xA;messageFunctionDetailsElement.AppendChild(messageFunctionElement);&#xA;&#xA;&#xA;&#xA;// Add longTextString element&#xA;XmlElement longTextStringElement = xmlDoc.CreateElement(&quot;&quot;, &quot;longTextString&quot;, &quot;&quot;);&#xA;commandCrypticElement.AppendChild(longTextStringElement);&#xA;&#xA;&#xA;&#xA;// Add textStringDetails element&#xA;XmlElement textStringDetailsElement = xmlDoc.CreateElement(&quot;&quot;, &quot;textStringDetails&quot;, &quot;&quot;);&#xA;textStringDetailsElement.InnerText = reportFilter;&#xA;longTextStringElement.AppendChild(textStringDetailsElement);&#xA;&#xA;&#xA;&#xA;// Return the XML string&#xA;string xmlResult = xmlDoc.InnerXml;&#xA;out_soapBody = xmlResult;&#xA;&#xA;&#xA;&#xA;// Print the XML result to the console&#xA;Console.WriteLine(&quot;XML Result:&quot;);&#xA;Console.WriteLine(xmlResult);" DisplayName="Invoke Code Generate SOAP Body" sap:VirtualizedContainerService.HintSize="387.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+      <ui:InvokeCode.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_soapBody">[soapBody]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_nonce">[in_credNonce]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_created">[in_credCreated]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_password">[in_credPassword]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_messageId">[in_messageId]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_reportType">[reportType]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[Now]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_cityCode">[in_cityCode]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_endPoint">[in_endPoint]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_userName">[in_userName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_action">[in_action]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="XML" AuthenticationType="None" Body="[soapBody]" BodyFormat="application/xml" DisplayName="HTTP Request Amadeus Sales Report TJQ" EnableSSLVerification="True" EndPoint="[in_endPoint]" sap:VirtualizedContainerService.HintSize="387.2,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[out_resContent]" StatusCode="[out_resStatus]" TimeoutMS="6000">
+      <ui:HttpClient.Attachments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Attachments>
+      <ui:HttpClient.Cookies>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Cookies>
+      <ui:HttpClient.Headers>
+        <InArgument x:TypeArguments="x:String" x:Key="Content-Type">text/xml; charset=utf-8;application/xml</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="SOAPAction">http://webservices.amadeus.com/HSFREQ_07_3_1A</InArgument>
+      </ui:HttpClient.Headers>
+      <ui:HttpClient.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Parameters>
+      <ui:HttpClient.UrlSegments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.UrlSegments>
+    </ui:HttpClient>
+  </Sequence>
+</Activity>
